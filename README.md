@@ -1,50 +1,27 @@
-# React + TypeScript + Vite
+# E-Sync
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+E-Sync es una plataforma avanzada de venta de entradas para eventos deportivos, conciertos y espectáculos. Desarrollada con tecnologías modernas como React, TypeScript y Vite, E-Sync ofrece una experiencia de usuario fluida y eficiente.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Autenticación de Usuarios**: Gestión de usuarios y autenticación segura con Supabase.
+- **Listado de Eventos**: Exploración de eventos deportivos, conciertos y espectáculos.
+- **Compra de Entradas**: Proceso de compra de entradas fácil y seguro.
+- **Gestión de Cuenta**: Herramientas para que los usuarios gestionen sus cuentas.
+- **Soporte al Cliente**: Funcionalidades de soporte para ayudar a los usuarios.
+- **Login con Google**: Integración del login de Google para una autenticación rápida y segura
 
-## Expanding the ESLint configuration
+## Habilidades Clave
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: Utilización de React para construir la interfaz de usuario.
+- **TypeScript**: Uso de TypeScript para tipado estático y prevención de errores.
+- **React Router**: Manejo de la navegación y rutas dentro de la aplicación.
+- **Supabase**: Autenticación y gestión de usuarios con Supabase.
+- **Tailwind CSS**: Estilización de componentes con Tailwind CSS.
+- **Google Login**: Integración del login de Google para la autenticación de usuarios.
+- **Lazy Loading**: Uso de `React.lazy` y `Suspense` para cargar componentes de manera diferida.
+- **Componentes Funcionales**: Uso de componentes funcionales y hooks en React.
+- **Gestión de Estado**: Uso de hooks para la gestión del estado en componentes.
+- **Vite**: Uso de Vite como herramienta de construcción y servidor de desarrollo.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Desarrolladores: DamianDev // Alfredo Montoya
