@@ -1,8 +1,8 @@
-# E-Sync
+> [!NOTE]  
+> E-Sync es una plataforma avanzada de venta de entradas para eventos deportivos, conciertos y espectáculos. Desarrollada con tecnologías modernas como React, TypeScript y Vite, E-Sync ofrece una experiencia de usuario fluida y eficiente.
 
-E-Sync es una plataforma avanzada de venta de entradas para eventos deportivos, conciertos y espectáculos. Desarrollada con tecnologías modernas como React, TypeScript y Vite, E-Sync ofrece una experiencia de usuario fluida y eficiente.
-
-## Características
+> [!IMPORTANT]  
+> ## Características
 
 - **Autenticación de Usuarios**: Gestión de usuarios y autenticación segura con Supabase.
 - **Listado de Eventos**: Exploración de eventos deportivos, conciertos y espectáculos.
@@ -10,8 +10,8 @@ E-Sync es una plataforma avanzada de venta de entradas para eventos deportivos, 
 - **Gestión de Cuenta**: Herramientas para que los usuarios gestionen sus cuentas.
 - **Soporte al Cliente**: Funcionalidades de soporte para ayudar a los usuarios.
 - **Login con Google**: Integración del login de Google para una autenticación rápida y segura
-
-## Habilidades Clave
+> [!IMPORTANT]  
+> ## Habilidades Clave
 
 - **React**: Utilización de React para construir la interfaz de usuario.
 - **TypeScript**: Uso de TypeScript para tipado estático y prevención de errores.
@@ -24,4 +24,5 @@ E-Sync es una plataforma avanzada de venta de entradas para eventos deportivos, 
 - **Gestión de Estado**: Uso de hooks para la gestión del estado en componentes.
 - **Vite**: Uso de Vite como herramienta de construcción y servidor de desarrollo.
 
-Desarrolladores: DamianDev // Alfredo Montoya
+> [!NOTE]  
+> Desarrolladores: DamianDev // Alfredo Montoya
