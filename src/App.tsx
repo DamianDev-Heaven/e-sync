@@ -10,7 +10,7 @@ const LoginPage = lazy(() => import('./components/LoginPage'));
 function App() {
   return (
     <Router>
-      <Suspense fallback={<div>dev...</div>}>
+      <Suspense fallback={<div>Cargando...</div>}>
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/AccountControl" element={<AccountDashboard />} />
