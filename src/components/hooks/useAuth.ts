@@ -13,6 +13,39 @@ const useAuth = () => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
+  const syncUserWithDatabase = async (supabaseUser: any) => {
+    try {
+      // Verificar si el usuario ya existe en la tabla `users`
+      const { data: userData, error: userError } = await supabase
+        .from('users')
+        .select('uid')
+        .eq('uid', supabaseUser.id)
+        .maybeSingle(); // <-- Usar maybeSingle
+
+      if (userError) throw userError;
+
+      if (!userData) {
+        // Si el usuario no existe, crear un registro en la tabla `users`
+        const { error: insertError } = await supabase
+          .from('users')
+          .insert([
+            {
+              uid: supabaseUser.id,
+              email: supabaseUser.email,
+              display_name: supabaseUser.user_metadata?.full_name || null,
+              photo_url: supabaseUser.user_metadata?.avatar_url || null,
+              last_sign_in_at: new Date().toISOString(),
+            },
+          ]);
+
+        if (insertError) throw insertError;
+        console.log('Usuario creado en la tabla `users`');
+      }
+    } catch (error) {
+      console.error('Error al sincronizar el usuario con la base de datos:', error);
+    }
+  };
+
   useEffect(() => {
     const initAuth = async () => {
       const session = supabase.auth.getSession(); // Check current session
@@ -30,6 +63,9 @@ const useAuth = () => {
       }
 
       if (supabaseUser) {
+        // Sincronizar el usuario con la tabla `users`
+        await syncUserWithDatabase(supabaseUser);
+
         const user: User = {
           uid: supabaseUser.id,
           display_name: supabaseUser.user_metadata?.full_name || null,
@@ -46,10 +82,13 @@ const useAuth = () => {
 
     initAuth();
 
-    const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+    const { data: authListener } = supabase.auth.onAuthStateChange(async (event, session) => {
       if (event === 'SIGNED_IN' && session) {
         const supabaseUser = session.user;
         if (supabaseUser) {
+          // Sincronizar el usuario con la tabla `users`
+          await syncUserWithDatabase(supabaseUser);
+
           const user: User = {
             uid: supabaseUser.id,
             display_name: supabaseUser.user_metadata?.full_name || null,
